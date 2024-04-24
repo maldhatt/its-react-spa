@@ -1,16 +1,28 @@
 import React from "react";
 
-import logo from "../assets/logo.svg";
+// import logo from "../assets/logo.svg";
 
 const Hero = () => (
   <div className="text-center hero my-5">
-    <img className="mb-3 app-logo" src={logo} alt="React logo" width="120" />
-    <h1 className="mb-4">React.js Sample Project</h1>
+    <style>
+      {`
+        #title {
+          font-size: 3.9rem;
+          text-transform: uppercase;
+        }
+        `}
+    </style>
+    {/* <img
+      className="mb-3 app-logo"
+      src="https://www.its4logistics.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.f96501d7.svg&w=96&q=75"
+      alt="React logo"
+      width="120"
+    /> */}
+    <h1 className="mb-4" id="title">
+      Supply Chain Excellence
+    </h1>
 
-    <p className="lead">
-      This is a sample application that demonstrates an authentication flow for
-      an SPA, using <a href="https://reactjs.org">React.js</a>
-    </p>
+    {/* <p className="lead">Supply Chain Excellence</p> */}
   </div>
 );
 

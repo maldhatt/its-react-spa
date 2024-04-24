@@ -8,14 +8,32 @@ import contentData from "../utils/contentData";
 class Content extends Component {
   render() {
     return (
-      <div className="next-steps my-5">
-        <h2 className="my-5 text-center">What can I do next?</h2>
+      <div className="next-steps my-5 p-3" id="content-main">
+        <style>
+          {
+            `
+            #content-main {
+              // border: 1px red solid;
+              padding: 0 90px !important;
+              font-size: 1.5rem;
+            }
+            #subtitle {
+              font-size: 2.5rem;
+            }
+
+            #linktitle {
+              font-size: 1.9rem;
+            }
+            `
+          }
+        </style>
+        <h2 className="my-5 text-center" id="subtitle">Learn more about our supply chain solutions</h2>
         <Row className="d-flex justify-content-between">
           {contentData.map((col, i) => (
             <Col key={i} md={5} className="mb-4">
-              <h6 className="mb-3">
+              <h6 className="mb-3" id="linktitle">
                 <a href={col.link}>
-                  <FontAwesomeIcon icon="link" className="mr-2" />
+                  <FontAwesomeIcon icon="link" className="mr-2"/>
                   {col.title}
                 </a>
               </h6>

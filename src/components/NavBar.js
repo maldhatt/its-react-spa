@@ -22,26 +22,38 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const {
-    user,
-    isAuthenticated,
-    loginWithRedirect,
-    logout,
-  } = useAuth0();
+  const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
   const toggle = () => setIsOpen(!isOpen);
 
   const logoutWithRedirect = () =>
     logout({
-        logoutParams: {
-          returnTo: window.location.origin,
-        }
+      logoutParams: {
+        returnTo: window.location.origin,
+      },
     });
 
   return (
     <div className="nav-container">
-      <Navbar color="light" light expand="md" container={false}>
+      <style>
+        {`
+          .logo {
+            width: 75px;
+            height: auto;
+            margin-right: 20px;
+          }
+          body {
+            background-color: rgba(0,0,0,0.7);
+            color: white;
+          }
+        `}
+      </style>
+      <Navbar color="dark" dark expand="md" container={false}>
         <Container>
-          <NavbarBrand className="logo" />
+          {/* <NavbarBrand className="logo" /> */}
+          <img
+            className="logo"
+            src="https://www.its4logistics.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.f96501d7.svg&w=96&q=75"
+          ></img>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
